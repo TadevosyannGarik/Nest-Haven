@@ -1,10 +1,13 @@
+import getCurrentUser from "./actions/getCurrentUser";
 import getListings from "./actions/getListings";
 import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
+import ListingCard from "./components/listings/ListingCard";
 
 
 export default async function Home() {
     const listings = await getListings()
+    const currentUser = getCurrentUser()
 
     if(listings.length === 0) {
         return (
@@ -18,7 +21,11 @@ export default async function Home() {
                 {listings.map((listing: any) => {
                     return (
                         <div>
-                            {listing.title  }
+                            <ListingCard
+                                currentUser={currentUser} 
+                                key={listing.title}
+                                data={listing}
+                            />
                         </div>
                     )
                 })}
