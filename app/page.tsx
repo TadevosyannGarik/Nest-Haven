@@ -27,7 +27,7 @@ const Home = async ({ searchParams }: HomeProps) => {
                         <div>
                             <ListingCard
                                 currentUser={currentUser} 
-                                key={listing.title}
+                                key={listing.id}
                                 data={listing}
                             />
                         </div>

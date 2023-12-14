@@ -10,8 +10,8 @@ interface ErrorStateProps {
 
 const ErrorState: React.FC<ErrorStateProps> = ({error}) => {
     useEffect(() => {
-        console.log(error)
-    }, [])
+        console.log(error);
+    }, []);
 
     return (
         <EmptyState 
